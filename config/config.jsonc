@@ -1,0 +1,166 @@
+{
+    /*
+    The GLUCK mod makes most if not all Glock 17 mods work on the glock 18c
+    */
+    "GLUCK": true,
+
+    /*
+    The M14 mod makes the M1A have the fire rate of the M14, and turns it select fire.
+    */
+    "M14": false,
+
+    /*
+    The Grenade launcher ergo mod adjusts grenade launcher ergo
+    It the GLs will be SET to the new value
+    */
+    "GrenadeLauncherErgo": true,
+    "GrenadeLauncherErgoValue": -10,
+
+    /*
+    The UMP drum adds a new .45 ACP drum mag to the game.
+    If other mods copy settings the UMP or Vector, you want to run this mod first to ensure that any
+        copies get the new mags.
+    If desired, it will be added it to the vector too.
+    If desired, it will be added to mechanic and peacekeeper level 3. 
+
+    */
+    "UMPDrum": true,
+    "UMPDrumVector": true,
+    "UMPDrumAddToTraders": true,
+
+    /*
+    zeroToHeroPouch replaces the alpha container with the waist pouch
+    */
+    "zeroToHeroPouch": true,
+
+    /*
+    Override the minimum level to access the ragfair
+    */
+    "ragfairLevelOverride": true,
+    "ragFairMinUserLevel": 99,
+
+    /*
+    Adds the AK-105 compatible muzzles to the AK-12
+    */
+    "AK12Muzzles": true,
+
+    /*
+    Changes name and description of the fake-ass vodka added by some stupid ass event. Can you tell I'm upset? I Can.
+    */
+    "fuckfakevodka": true,
+
+    /*
+    Gives the "Thumb drive with military data" quest item a RED inventory background so it can't be mistaken
+    for the ordinary flash drive it looks identical to - it spawns commonly as loot.
+    */
+    "redMilitaryFlashDrive": true,
+
+    /*
+    Adds handguards from other AKs to the RPD, and allows muzzles from the AK103 on the RPD barrel
+    */
+    "rpdmods": true,
+
+    /*
+    Remvoes the rusted bloody key from fence.
+    */
+    "enableFenceBlacklist": true,
+    "fenceBlacklist": [
+        "64d4b23dc1b37504b41ac2b6", //Rusted Bloody Key
+        "5e4abc6786f77406812bd572" //Medical backpack
+    ],
+
+    /*
+    Adds the m203 to the usp. Deal with it.
+    */
+    "memeUSP45": true,
+
+    /*
+    Reduce the trader refresh time.
+    */
+    "enableTraderRefreshAdjustment": false, //Enable the trader refresh time adjustment.
+    "traderRefreshTimeAdjustmentMin": 0, //How much to adjust the minimum refresh time by. 
+    "traderRefreshTimeAdjustmentMax": -5400, //How much to adjust the maximum refresh time by. 
+    "traderRefreshTimeAdjustmentLimit": 3600, //Time will never go below this value. 
+
+
+    /*
+    Reduce ergonomics penality on suppressors
+    */
+    "enableSuppressorErgoAdjustment": true, //Enable the suppressor ergo adjustment.
+    "suppressorErgoAdjustment": 10, //How much to adjust the ergonomics by.
+
+    /*
+    * Adds shorter barrels to the M700
+    */
+    "m700Barrel": true,
+
+    /*
+    * Effectively removes quests from the event list, so they can be done at any time.
+    */
+    "enableQuests": true,
+    "quests":
+    [
+        "674647f38466ebb03408b291" //Thats a Great Plan Walter
+    ],
+
+    "junkbox":true, //Changes the junkbox to cost 80 dogtags instead of 40
+
+    "BTRChanges": false,
+    "keychanges": true, //change keys
+    "bitcoinPrice": true, //Makes bitcoins worth less
+    "bitcoinPriceDivisor": 4, //Handbook bitcoin price is divided by this (4 = a quarter of vanilla)
+
+    //Goes through every magazine and zeroes out any reload-speed penalty (negative LoadUnloadModifier), while keeping the mags that load FASTER than baseline. You only ever gain.
+    "removeMagazineLoadPenalty": true,
+
+    //Whitelists the DrakiaXYZ-GildedKeyStorage containers (golden keychains + keycard holder) into the vanilla Key Box's grid so they can be stored inside it. Each id is skipped if it isn't installed. The Golden Key Box itself is left out on purpose; add its id to the list below if you want it too.
+    "gildedKeysInKeyBox": true,
+    "gildedKeysInKeyBoxItems":
+    [
+        "661cb372e5eb56290da76c3e", //Golden Keychain Mk. I
+        "661cb3743bf00d3d145518b3", //Golden Keychain Mk. II
+        "661cb376b16226f648eb0cdc", //Golden Keychain Mk. III
+        "661cb36f5441dc730e28bcb0"  //Golden Keycard Holder
+    ],
+
+    "fixModAmmoPricing": true, //Mod authors have no price reference for calibers vanilla doesn't have, so some modded ammo ships absurdly cheap (WTT's .44 Magnum tracer was 54 roubles - under vanilla's cheapest pistol round). This prices modded ammo by PENETRATION, using the median vanilla price for that penetration band. Floor only: ammo priced generously keeps its price, and vanilla ammo is never touched.
+
+    "changeTraderCurrency": true, //Change which currency a trader PAYS YOU IN when you sell to them (vanilla Peacekeeper already does this with USD). Does not affect what they sell.
+    "traderCurrencies": //traderId -> RUB / USD / EUR / GP
+    {
+        "58330581ace78e27b8b10cee": "EUR" //Skier - pays in euros
+    },
+
+    "nutCanCraft": true, //Adds the missing workbench craft for the WTT-Backport "Nut can": flat screwdriver (tool) + can of Majaica coffee beans, 1 hour. Skipped if the item/WTT isn't installed.
+
+    //Adds missing crafts for two more WTT-Backport containers. Toolbox (Discord Version): Lavatory ("toilet") L1, 3h - 4 bolts, 4 screw nuts, 2 metal fuel tanks, 4 metal spare parts, 2 KEKTAPE, 1 Lega Medal. Poster tube: Workbench L1, 1h - WD-40 (400ml), golden neck chain, gingy keychain, WZ Wallet. Each skipped if its item isn't installed.
+    "backportContainerCrafts": true,
+
+    //Restricts the "Commando" in-game chatbot (the bot behind `spt give`, plus `spt trader` / `spt profile`) to the profile ids listed below. When true, anyone NOT in the list is told they aren't authorized; when false it's vanilla (anyone can use it). Ids are the profile info.id (sessionId), NOT the AID. The list is pre-filled with every profile on this install - delete the ones you DON'T want to have access.
+    "commandoWhitelistEnabled": false,
+    "commandoWhitelist":
+    [
+        "6a596350d81b4328e8c9fd1c", //Leaves
+        //"6a596369d81b4328e8ca0058", //liniv
+        //"6a5963f0d81b4328e8ca03ee", //Ryssken
+        //"6a5a6b1cfca72f2034deaa72", //Butler
+        //"6a65c877417f6a2b2812cf72", //Skiftnycklar
+        //"6a73db22f5841c49a0f15dc3", //leavesDev
+        "6a5962f39bce9f2c704f90b2"  //headless_6a5962f39bce9f2c704f90b1 - Fika headless client, not a real player
+    ],
+
+    //Lowers the two absurd finish-condition counts on the four vanilla Drip-Out quests (kill 100 Scavs + hand over 50 cosmetics, for both the USEC and BEAR variants of Part 1 and Part 2) to the counts below. Only the counts change - conditions, targets and rewards stay vanilla. Questrandomizer randomizes these; for a profile that already rolled Drip-Out, force a re-roll of the pair in the QR web UI to pick up the new counts.
+    "nerfDripOut": true,
+    "dripOutKillCount": 1,
+    "dripOutHandoverCount": 1,
+
+    //Overrides the base-game airdrop TYPE weightings at runtime (leaves SPT_Data/configs/airdrop.json untouched - base files are off-limits). Weights are RELATIVE, not percentages: the server rolls a type weighted by their sum. Only the types listed in airdropWeights are changed; any left out keeps its vanilla weight. Vanilla: mixed 500 / weaponArmor 400 / foodMedical 100 / barter 100 (radar 0, toiletPaper 1) -> foodMedical ~9%. Names must match exactly: mixed / weaponArmor / foodMedical / barter / radar / toiletPaper.
+    "airdropWeightOverride": true,
+    "airdropWeights":
+    {
+        "mixed": 500,
+        "weaponArmor": 400,
+        "foodMedical": 300,
+        "barter": 300
+    }
+}
