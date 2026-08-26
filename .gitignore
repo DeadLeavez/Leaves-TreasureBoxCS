@@ -1,56 +1,49 @@
+# ============================================================================
+#  Shared .gitignore for every Leaves SPT mod.
+#  SINGLE SOURCE OF TRUTH - edit only this file (4.0 Mods/.gitignore.shared).
+#  Directory.Build.targets copies it into each project as .gitignore on build,
+#  so a change here propagates to every mod on the next build; each repo still
+#  carries its own committed .gitignore for portability.
+# ============================================================================
+
+# Build output
+/obj/
+/bin/
+/_dist/
 /output/
-
-# Dependency directories
-node_modules/
-
-# Output of the compiler
 dist/
+.nuget/
 
-# Environment variables
-.env
+# Runtime-owned id maps - recreated fresh by the mod on load, never shipped
+ids.jsonc
+
+# Internal dev docs - ship ONLY the README and any LICENSE/COPYING files
+*.md
+!README.md
+!readme.md
+!*LICENSE*.md
+!*license*.md
+!*COPYING*.md
+
+# JS is shipped as .txt and served at a .js URL (SPT ModValidator rejects .js/.ts)
+*.js
+/deps/*.js
+**/*.ts-build-info
 
 # IDE files
 .idea/
 *.iml
 .vscode/
 
-# System Files
+# System files
 .DS_Store
 Thumbs.db
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Runtime data
-pids
+# Logs / runtime scratch
+*.log
 *.pid
 *.seed
-*.log
+pids
 
-# TypeScript compiler output
-**/*.ts-build-info
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional REPL history
-.node_repl_history
-package-lock.json
-
-# Coverage directory used by tools like istanbul
-coverage
-
-/deps/*.js
-*.js
-/obj/
-/_dist/
-/bin/
-# Internal dev docs - do not ship anything but the README
-*.md
-!README.md
-!readme.md
+# Environment variables
+.env
