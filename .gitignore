@@ -50,3 +50,7 @@ coverage
 /obj/
 /_dist/
 /bin/
+# Internal dev docs - do not ship anything but the README
+*.md
+!README.md
+!readme.md
