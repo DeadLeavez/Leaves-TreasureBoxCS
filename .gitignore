@@ -1,9 +1,7 @@
 # ============================================================================
-#  Shared .gitignore for every Leaves SPT mod.
-#  SINGLE SOURCE OF TRUTH - edit only this file (4.0 Mods/.gitignore.shared).
-#  Directory.Build.targets copies it into each project as .gitignore on build,
-#  so a change here propagates to every mod on the next build; each repo still
-#  carries its own committed .gitignore for portability.
+#  Shared .gitignore for all my mods
+#  Edit only this file (4.0 Mods/.gitignore.shared).
+#  Directory.Build.targets copies it into each project as .gitignore on build
 # ============================================================================
 
 # Build output
@@ -14,10 +12,13 @@
 dist/
 .nuget/
 
-# Runtime-owned id maps - recreated fresh by the mod on load, never shipped
+# Runtime-owned id maps
 ids.jsonc
 
-# Internal dev docs - ship ONLY the README and any LICENSE/COPYING files
+# ConfigSync-generated form schema, re-emitted next to each config.jsonc on every sync
+*.schema.jsonc
+
+# Internal findings and other crap. ship ONLY the README and any LICENSE/COPYING files
 *.md
 !README.md
 !readme.md
@@ -27,7 +28,6 @@ ids.jsonc
 
 # JS is shipped as .txt and served at a .js URL (SPT ModValidator rejects .js/.ts)
 *.js
-/deps/*.js
 **/*.ts-build-info
 
 # IDE files
