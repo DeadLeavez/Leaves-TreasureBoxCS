@@ -57,3 +57,6 @@ Added the following options
 
 ## 1.2.2
 - Update for 3.11 (still works on 3.10)
+
+## 2.0.0
+- Updated to SPT 4.0.x (not compatible with 4.1.x).
