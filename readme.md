@@ -28,6 +28,9 @@ Has a ton of small mods I personally made for myself. Everything is toggle-able 
 - Allow the flare-gun to be added to special slots.
 - Buff shturman's key chance.
 
+## Requirements
+- [Leaves-LeavesUtil](https://github.com/DeadLeavez/Leaves-LeavesUtil) ([latest release](https://github.com/DeadLeavez/Leaves-LeavesUtil/releases/latest)) - required.
+
 # Changelog
 ## 1.0.0
  Initial Release
